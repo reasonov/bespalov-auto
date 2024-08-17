@@ -1,0 +1,18 @@
+.input {
+  padding: 10px 25px;
+  border-radius: 37px;
+  border: 1px solid #D7D7D7;
+  font-size: 15px;
+  font-weight: 500;
+  color: $grey-light;
+
+  &::placeholder {
+    font-size: 15px;
+    font-weight: 500;
+    color: $grey-light;
+  }
+
+  @media (min-width: 1200px) {
+    height: 48px;
+  }
+}

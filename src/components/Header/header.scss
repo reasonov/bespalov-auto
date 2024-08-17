@@ -1,0 +1,148 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  box-shadow: 0px 2px 10px 0px #0000001A;
+  background-color: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    box-sizing: content-box;
+
+    @media (min-width: 1200px) {
+      display: grid;
+      grid-template-columns: 180px 1fr 250px;
+      grid-column-gap: 50px;
+      padding: 20px 60px;
+    }
+
+    @media (min-width: 1440px) {
+      grid-column-gap: 160px;
+    }
+  }
+
+  &__logo {
+    width: 96px;
+  }
+
+  &__right {
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: flex;
+      align-items: center;
+      grid-column-gap: 15px;
+    }
+  }
+}
+
+.menu {
+  &__toggle {
+    position: relative;
+    width: 24px;
+    height: 17px;
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    transition: $base-transition;
+    background-color: $grey-main;
+
+    &1 {
+      top: 0;
+    }
+
+    &2 {
+      top: 7px;
+    }
+
+    &3 {
+      top: 13px;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $grey-main;
+
+    @include link-hover;
+  }
+
+  &__phone-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 7px;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 13px;
+  }
+}
+
+.menu__toggle--opened {
+  .menu__line {
+    &1 {
+      top: 8px;
+      transform: rotateZ(45deg) translateY(-50%);
+    }
+
+    &2 {
+      left: 200px;
+    }
+
+    &3 {
+      top: 5px;
+      transform: rotateZ(-45deg) translateY(50%);
+    }
+  }
+}
+
+.phone {
+  &__link {
+    @include link-hover;
+    font-size: 15px;
+    font-weight: 700;
+    color: $grey-main;
+  }
+}
+
+.socials__item {
+  @include scale-on-hover(1.3);
+  cursor: pointer;
+
+  img {
+    width: 22px;
+    height: 22px;
+  }
+}

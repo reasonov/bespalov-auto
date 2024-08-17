@@ -1,0 +1,139 @@
+.preview {
+  padding-top: 90px;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    overflow: visible;
+    padding-top: 140px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    @include adaptiv-font(42, 18);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: $grey-text;
+
+    @media (min-width: 768px) {
+      max-width: 500px;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 690px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 50%;
+    margin-bottom: 170px;
+    @include adaptiv-font(16, 13);
+    font-weight: 500;
+    color: $grey-light;
+
+    @media (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    padding: 0 20px;
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 650px;
+    z-index: -1;
+
+    @media (min-width: 768px) {
+      top: -90px;
+      left: auto;
+      right: -90px;
+      transform: translateX(10%);
+      width: 800px;
+    }
+
+    @media (min-width: 1024px) {
+      top: -100px;
+      width: 1050px;
+    }
+
+    &-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__star {
+    position: absolute;
+    opacity: 1;
+    animation: 3s StarAnimateKeys ease infinite;
+
+    &1 {
+      top: 115px;
+      left: 225px;
+
+      @media (min-width: 768px) {
+        top: 145px;
+        left: 290px;
+      }
+
+      @media (min-width: 1024px) {
+        top: 200px;
+        left: 390px;
+      }
+    }
+
+    &2 {
+      top: 135px;
+      right: 110px;
+      animation-delay: 1s;
+
+      @media (min-width: 768px) {
+        top: 170px;
+        right: 140px;
+      }
+
+      @media (min-width: 1024px) {
+        top: 235px;
+        right: 200px;
+      }
+    }
+  }
+}
+
+@keyframes StarAnimateKeys {
+  0% {
+    opacity: .5;
+    transform: scale(0.7);
+  }
+  25% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: .5;
+    transform: scale(0.7);
+  }
+}
+
+.text--green {
+  color: $green-main;
+}

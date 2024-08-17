@@ -1,0 +1,20 @@
+.form {
+  display: grid;
+  grid-row-gap: 15px;
+  margin-bottom: 40px;
+
+  @media (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 15px;
+    margin-bottom: 0;
+  }
+
+  &-wrapper {
+    @media (min-width: 1200px) {
+      display: flex;
+      align-items: center;
+      grid-column-gap: 15px;
+    }
+  }
+}

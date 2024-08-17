@@ -1,0 +1,43 @@
+.form-bottom {
+  &__container {
+    max-width: 600px;
+    padding: 0 40px;
+    padding-top: 80px;
+    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      max-width: none;
+      padding: 0;
+      padding-top: 80px;
+    }
+  }
+
+  &__main {
+    @media (min-width: 1200px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include default-block;
+    }
+  }
+
+  &__title {
+    @include section-title;
+    margin-bottom: 15px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $grey-main;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 0;
+    }
+  }
+}

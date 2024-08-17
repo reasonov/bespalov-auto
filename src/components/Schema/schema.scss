@@ -1,0 +1,62 @@
+.schema {
+  padding-top: 100px;
+
+  &__container {
+    padding: 0 20px;
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+    @include section-title;
+  }
+
+  &__list {
+    display: grid;
+    grid-row-gap: 15px;
+  }
+
+  &__card {
+    display: flex;
+    grid-column-gap: 13px;
+    @include default-block;
+    @include scale-on-hover;
+  }
+}
+
+.card {
+  &__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: $grey-main;
+    background-color: $grey-background-light;
+  }
+
+  &__main {
+    display: grid;
+    grid-column-gap: 6px;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+    @include card-caption;
+    color: $grey-main;
+  }
+
+  &__text {
+    font-size: 13px;
+    font-weight: 500;
+    color: $grey-light;
+  }
+}

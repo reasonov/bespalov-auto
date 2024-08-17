@@ -1,0 +1,52 @@
+.button {
+  padding: 10px 18px;
+  border-radius: 30px;
+  transition: $base-transition;
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: $green-main;
+
+  @media (min-width: 768px) {
+    padding: 13px 24px;
+  }
+
+  &--md {
+    @include adaptiv-font(14, 12);
+  }
+
+  &--lg {
+    font-size: 14px;
+  }
+
+  &--max {
+    font-size: 14px;
+
+    @media (min-width: 768px) {
+      padding: 13px 24px;
+    }
+
+    @media (min-width: 1440px) {
+      padding: 15px 30px;
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+
+    @media (min-width: 1200px) {
+      width: auto;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #80b42a;
+  }
+
+  &:active {
+    transform: scale(1);
+    background-color: #6d9826;
+  }
+}

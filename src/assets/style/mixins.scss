@@ -1,0 +1,80 @@
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  @media (max-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{1440}));
+  }
+  @media (min-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{1440}));
+  }
+  @media (min-width: 1440px) {
+    font-size: $pcSize + px;
+  }
+}
+
+@mixin default-block {
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 10px 0px #0000001A;
+  background-color: #fff;
+
+  @media (min-width: 720px) {
+    padding: 35px 25px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 40px 30px;
+  }
+}
+
+@mixin section-title {
+  @include adaptiv-font(24, 18);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $grey-main;
+}
+
+@mixin card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #414E4F;
+}
+
+@mixin card-caption {
+  @include adaptiv-font(16, 14);
+  font-weight: 700;
+}
+
+@mixin scale-on-hover($scaleSize: 1.025) {
+  transition: $base-transition;
+  &:hover {
+    transform: scale($scaleSize);
+  }
+}
+
+@mixin link-hover {
+  position: relative;
+  opacity: 1;
+  transition: .3s all ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    transition: .3s all ease;
+    background-color: #414E4F;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

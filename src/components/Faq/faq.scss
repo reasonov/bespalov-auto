@@ -1,0 +1,25 @@
+.faq {
+  padding-top: 100px;
+
+  &__container {
+    padding: 0 20px;
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @include section-title;
+  }
+
+  &__list {
+    display: grid;
+    grid-row-gap: 15px;
+  }
+
+  &__item {
+    @include scale-on-hover;
+  }
+}

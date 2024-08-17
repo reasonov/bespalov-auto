@@ -1,0 +1,84 @@
+.accordion {
+  border-radius: 20px;
+  box-shadow: 0px 2px 10px 0px #0000001A;
+  background-color: $grey-background-default;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include default-block;
+  }
+
+  &__wrapper {
+    max-height: 500px;
+  }
+
+  &__body {
+    padding: 25px 20px;
+  }
+
+  &__title {
+    @include card-caption;
+    color: $grey-main;
+  }
+
+  &__text {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $grey-main;
+  }
+
+  &__toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    transition: $base-transition;
+
+    &--open {
+      transform: rotateZ(45deg);
+
+      .toggle__line {
+        background-color: $grey-main;
+      }
+    }
+  }
+}
+
+.toggle {
+  &__line {
+    position: absolute;
+    border-radius: 30px;
+    background-color: $green-main;
+
+    &1 {
+      top: 50%;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+
+    &2 {
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.accordionAm-enter-active,
+.accordionAm-leave-active {
+  transition: $base-transition;
+}
+
+.accordionAm-enter-from,
+.accordionAm-leave-to {
+  max-height: 0px;
+  overflow: hidden;
+}

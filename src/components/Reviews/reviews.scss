@@ -1,0 +1,78 @@
+.review {
+  padding-top: 100px;
+
+  &__title {
+    margin-bottom: 36px;
+    @include section-title;
+    text-align: center;
+  }
+
+  &__card {
+    min-width: 260px;
+    max-width: 340px;
+    padding: 25px 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #0000001A;
+    background-color: #fff;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  &__image {
+    width: 55px;
+    height: 55px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-row-gap: 6px;
+  }
+
+  &__name {
+    @include card-caption;
+    color: #414E4F;
+  }
+
+  &__date {
+    font-size: 13px;
+    color: #414E4F;
+  }
+
+  &__comment {
+    transition: $base-transition;
+    max-height: 140px;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 17px;
+    text-align: left;
+    color: #414E4F;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 8px;
+    margin-top: 13px;
+    font-size: 13px;
+    color: #828282;
+  }
+}
+
+.comment--toggle {
+  max-height: 300px;
+}
+
+.toggle-icon {
+  transition: $base-transition;
+
+  &--active {
+    transform: rotateZ(180deg);
+  }
+}
